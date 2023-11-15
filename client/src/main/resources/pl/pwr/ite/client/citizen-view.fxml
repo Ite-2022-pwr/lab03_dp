@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pl.pwr.ite.client.view.controller.citizen.CitizenController"
+            fx:id="mainBorderPane">
+    <top>
+        <HBox spacing="50" alignment="CENTER"
+        style="-fx-font-size: 15pt; -fx-font-family: Arial">
+            <Button text="Create registration" onAction="#createButtonClick"/>
+            <Button text="My registrations" onAction="#listButtonClick"/>
+        </HBox>
+    </top>
+    <center>
+
+    </center>
+</BorderPane>

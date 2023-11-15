@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER" hgap="10" vgap="10"
+          fx:controller="pl.pwr.ite.client.view.controller.citizen.ListRegistrationsController"
+          gridLinesVisible="false">
+    <padding>
+        <Insets top="50" left="50" bottom="50" right="50"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="50"/>
+        <ColumnConstraints percentWidth="50"/>
+    </columnConstraints>
+    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
+        <TableView fx:id="registrationsTableView" onMouseClicked="#cellSelectedEvent">
+            <columns>
+                <TableColumn text="ID" prefWidth="250">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Status" prefWidth="75">
+                    <cellValueFactory><PropertyValueFactory property="status"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Registration time" prefWidth="200">
+                    <cellValueFactory><PropertyValueFactory property="time"/></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button text="Refresh" onAction="#refreshButtonClick"/>
+    </VBox>
+    <GridPane gridLinesVisible="false" style="-fx-font-size: 15pt; -fx-font-family: Arial" hgap="2" vgap="2">
+        <padding>
+            <Insets top="5" right="5" bottom="5" left="5"/>
+        </padding>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="30"/>
+            <ColumnConstraints percentWidth="70"/>
+        </columnConstraints>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="ID"/>
+        <Label fx:id="idLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="Status"/>
+        <Label fx:id="statusLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Time"/>
+        <Label fx:id="timeLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="Total trees"/>
+        <Label fx:id="totalTreesLabel" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="Decision"/>
+        <Label fx:id="decisionLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" wrapText="true" text="Not resolved"/>
+    </GridPane>
+</GridPane>

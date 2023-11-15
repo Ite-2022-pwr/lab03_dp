@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import pl.pwr.ite.client.model.enums.RegistrationStatus?>
+<?import javafx.scene.control.TextArea?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER"
+      fx:controller="pl.pwr.ite.client.view.controller.inspector.InspectorController">
+    <padding>
+        <Insets top="50" left="50" bottom="50" right="50"/>
+    </padding>
+    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
+        <TableView fx:id="registrationsTableView" onMouseClicked="#cellSelectedEvent">
+            <columns>
+                <TableColumn text="ID" prefWidth="250">
+                    <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Status" prefWidth="75">
+                    <cellValueFactory><PropertyValueFactory property="status"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="User ID" prefWidth="250">
+                    <cellValueFactory><PropertyValueFactory property="userId"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Registration time" prefWidth="200">
+                    <cellValueFactory><PropertyValueFactory property="time"/></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button text="Refresh" onAction="#refreshButtonClick"/>
+    </VBox>
+    <GridPane alignment="CENTER">
+        <padding>
+            <Insets top="5" right="5" bottom="5" left="5"/>
+        </padding>
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"/>
+            <ColumnConstraints percentWidth="50"/>
+        </columnConstraints>
+        <GridPane gridLinesVisible="false" style="-fx-font-size: 10pt; -fx-font-family: Arial" hgap="2" vgap="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <padding>
+                <Insets top="5" right="5" bottom="5" left="5"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="30"/>
+                <ColumnConstraints percentWidth="70"/>
+            </columnConstraints>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="ID"/>
+            <Label fx:id="idLabel" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="User ID"/>
+            <Label fx:id="userIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="Status"/>
+            <Label fx:id="statusLabel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="Time"/>
+            <Label fx:id="timeLabel" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+            <Label fx:id="reportLabel" GridPane.columnIndex="0" GridPane.rowIndex="4" text="Report"/>
+            <TextArea fx:id="reportDescriptionTextArea" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+            <Button text="Save report" onAction="#saveReportButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        </GridPane>
+        <TableView fx:id="treesTableView" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <columns>
+                <TableColumn text="Name">
+                    <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Diameter">
+                    <cellValueFactory><PropertyValueFactory property="diameter"/></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </GridPane>
+</VBox>
