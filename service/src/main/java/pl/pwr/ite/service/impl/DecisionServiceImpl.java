@@ -7,6 +7,7 @@ import pl.pwr.ite.model.repository.DecisionRepository;
 import pl.pwr.ite.service.DecisionService;
 
 import java.util.Arrays;
+import java.util.UUID;
 
 @Service
 public class DecisionServiceImpl extends EntityServiceBase<Decision> implements DecisionService {
@@ -18,5 +19,10 @@ public class DecisionServiceImpl extends EntityServiceBase<Decision> implements 
     @Override
     public Decision get(DecisionFilter filter) {
         return ((DecisionRepository) getRepository()).getByRegistrationId(filter.getRegistrationId()).orElse(null);
+    }
+
+    @Override
+    public Decision getByRegistrationId(UUID registrationId) {
+        return ((DecisionRepository) getRepository()).getByRegistrationId(registrationId).orElse(null);
     }
 }

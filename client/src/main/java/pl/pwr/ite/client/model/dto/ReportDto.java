@@ -7,5 +7,7 @@ public class ReportDto {
 
     private RegistrationDto registration;
 
+    private UserDto user;
+
     private String description;
 }

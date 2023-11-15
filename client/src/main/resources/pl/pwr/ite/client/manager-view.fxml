@@ -19,6 +19,7 @@
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 <?import pl.pwr.ite.client.model.enums.RegistrationStatus?>
+<?import javafx.scene.control.TextArea?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml" alignment="TOP_CENTER"
       fx:controller="pl.pwr.ite.client.view.controller.manager.ManagerController">
@@ -85,7 +86,7 @@
             <Label fx:id="reportDescriptionLabel" GridPane.columnIndex="1" GridPane.rowIndex="6" text="Report" visible="false" wrapText="true"/>
 
             <Label fx:id="decisionLabel" GridPane.columnIndex="0" GridPane.rowIndex="7" text="Decision" visible="false"/>
-            <TextField fx:id="decisionTextField" prefWidth="300" GridPane.columnIndex="0" GridPane.rowIndex="8" text="Not resolved" visible="false"/>
+            <TextArea fx:id="decisionTextField" prefWidth="300" GridPane.columnIndex="0" GridPane.rowIndex="8" text="Not resolved" visible="false"/>
 
             <Button text="Save decision" onAction="#saveDecisionButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
         </GridPane>

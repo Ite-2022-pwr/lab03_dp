@@ -28,4 +28,7 @@ public class User extends EntityBase {
 
     @OneToMany(mappedBy = "user")
     private Set<Decision> decisions = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Report> reports = new HashSet<>();
 }

@@ -77,6 +77,19 @@ public class InspectorController {
         var report = new ReportDto();
         report.setRegistration(selectedRegistration);
         report.setDescription(reportDescriptionTextArea.getText());
+        report.setUser(sceneManager.getUserContext());
         webClientService.sendRequest(HttpMethod.POST, "/report", report, ReportDto.class, ReportDto.class);
+        selectedRegistration = null;
+        clear();
+        refreshButtonClick(null);
+    }
+
+    private void clear() {
+        idLabel.setText("");
+        userIdLabel.setText("");
+        timeLabel.setText("");
+        statusLabel.setText("");
+        treesTableView.getItems().clear();
+        reportDescriptionTextArea.setText("");
     }
 }

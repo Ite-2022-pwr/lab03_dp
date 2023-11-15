@@ -3,10 +3,7 @@ package pl.pwr.ite.client.view.controller.manager;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import org.springframework.http.HttpMethod;
 import pl.pwr.ite.client.model.dto.DecisionDto;
@@ -36,7 +33,7 @@ public class ManagerController {
     @FXML protected Label decisionLabel;
     @FXML protected ComboBox<RegistrationStatus> statusComboBox;
     @FXML protected Label userIdLabel;
-    @FXML protected TextField decisionTextField;
+    @FXML protected TextArea decisionTextField;
     @FXML protected Label timeLabel;
     @FXML protected Label idLabel;
     @FXML protected TableView<ManagerRegistrationTableDataModel> registrationsTableView;
@@ -74,7 +71,9 @@ public class ManagerController {
             var decision = webClientService.sendRequest(HttpMethod.GET, "/decision/get", filter, DecisionFilter.class, DecisionDto.class);
             decisionTextField.setText(decision.getDescription());
         }
-        boolean shouldRenderReport = registration.getStatus() == RegistrationStatus.Pending;
+        boolean shouldRenderReport =
+                registration.getStatus() == RegistrationStatus.Pending
+                || registration.getStatus() == RegistrationStatus.Finished;
         reportLabel.setVisible(shouldRenderReport);
         reportDescriptionLabel.setVisible(shouldRenderReport);
         if(shouldRenderReport) {
@@ -105,5 +104,19 @@ public class ManagerController {
             webClientService.sendRequest("/decision", decision, DecisionDto.class, DecisionDto.class);
         }
         webClientService.sendRequest(HttpMethod.PUT, "/registration", selectedRegistration, RegistrationDto.class, RegistrationDto.class);
+        selectedRegistration = null;
+        clear();
+    }
+
+    private void clear() {
+        idLabel.setText("");
+        userIdLabel.setText("");
+        timeLabel.setText("");
+        statusComboBox.setValue(null);
+        treesTableView.getItems().clear();
+        reportLabel.setVisible(false);
+        reportDescriptionLabel.setVisible(false);
+        decisionLabel.setVisible(false);
+        decisionTextField.setVisible(false);
     }
 }

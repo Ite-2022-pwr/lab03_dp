@@ -21,7 +21,10 @@ public class DecisionFacade extends EntityServiceFacade<Decision, DecisionDto, D
     }
 
     public Decision create(DecisionDto dto) {
-        var decision = new Decision();
+        var decision = getService().getByRegistrationId(dto.getRegistration().getId());
+        if(decision == null) {
+            decision = new Decision();
+        }
         decision.setDescription(dto.getDescription());
 
         var user = userService.findById(dto.getUser().getId());

@@ -6,11 +6,12 @@ import pl.pwr.ite.server.web.dto.ReportDto;
 
 @Component
 public class ReportMapper extends MapperBase<Report, ReportDto> {
-
+    private final UserMapper userMapper;
     private final RegistrationMapper registrationMapper;
 
-    public ReportMapper(RegistrationMapper registrationMapper) {
+    public ReportMapper(UserMapper userMapper, RegistrationMapper registrationMapper) {
         super(ReportDto.class);
+        this.userMapper = userMapper;
         this.registrationMapper = registrationMapper;
     }
 
@@ -18,5 +19,6 @@ public class ReportMapper extends MapperBase<Report, ReportDto> {
     public void transform(Report source, ReportDto destination) {
         destination.setDescription(source.getDescription());
         map(destination::setRegistration, source.getRegistration(), registrationMapper);
+        map(destination::setUser, source.getUser(), userMapper);
     }
 }

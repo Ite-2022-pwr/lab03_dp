@@ -21,11 +21,23 @@ public class Report extends EntityBase {
     @Column(insertable = false, updatable = false, nullable = false, name = "registration_id")
     private UUID registrationId;
 
+    @ManyToOne
+    @JoinColumn(nullable = false, name = "u_id")
+    private User user;
+
+    @Column(insertable = false, updatable = false, nullable = false, name = "u_id")
+    private UUID userId;
+
     @Column(nullable = false, length = 1024)
     private String description;
 
     public void setRegistration(Registration registration) {
         this.registration = registration;
         this.registrationId = registration == null ? null : registration.getId();
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+        this.userId = user == null ? null : user.getId();
     }
 }
