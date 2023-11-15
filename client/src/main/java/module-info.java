@@ -17,5 +17,4 @@ module client {
     opens pl.pwr.ite.client.view.controller.citizen to javafx.fxml, javafx.graphics;
     opens pl.pwr.ite.client.view.controller.inspector to javafx.fxml, javafx.graphics;
     opens pl.pwr.ite.client.view.controller.manager to javafx.fxml, javafx.graphics;
-
 }
