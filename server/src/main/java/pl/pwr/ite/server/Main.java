@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(scanBasePackages = "pl.pwr.ite")
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })
-@EntityScan(basePackages = "pl.pwr.ite")
-@EnableJpaRepositories(basePackages = "pl.pwr.ite")
+@EntityScan(basePackages = "pl.pwr.ite.model.entity")
+@EnableJpaRepositories(basePackages = "pl.pwr.ite.model.repository")
 public class Main {
 
     public static void main(String[] args) {
