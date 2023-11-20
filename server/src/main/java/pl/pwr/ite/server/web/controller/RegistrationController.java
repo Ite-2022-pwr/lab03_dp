@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.pwr.ite.server.web.dto.RegistrationDto;
-import pl.pwr.ite.model.filter.RegistrationFilter;
+import pl.pwr.ite.server.model.filter.RegistrationFilter;
 import pl.pwr.ite.server.web.service.RegistrationFacade;
 
 import java.util.Collection;

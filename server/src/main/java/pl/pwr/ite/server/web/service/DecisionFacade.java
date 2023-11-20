@@ -1,12 +1,12 @@
 package pl.pwr.ite.server.web.service;
 
 import org.springframework.stereotype.Component;
-import pl.pwr.ite.model.entity.Decision;
+import pl.pwr.ite.server.model.entity.Decision;
 import pl.pwr.ite.server.web.dto.DecisionDto;
 import pl.pwr.ite.server.web.mapper.DecisionMapper;
-import pl.pwr.ite.service.DecisionService;
-import pl.pwr.ite.service.RegistrationService;
-import pl.pwr.ite.service.UserService;
+import pl.pwr.ite.server.service.DecisionService;
+import pl.pwr.ite.server.service.RegistrationService;
+import pl.pwr.ite.server.service.UserService;
 
 @Component
 public class DecisionFacade extends EntityServiceFacade<Decision, DecisionDto, DecisionService, DecisionMapper> {

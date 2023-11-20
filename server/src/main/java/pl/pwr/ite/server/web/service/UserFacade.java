@@ -1,10 +1,10 @@
 package pl.pwr.ite.server.web.service;
 
 import org.springframework.stereotype.Component;
-import pl.pwr.ite.model.entity.User;
+import pl.pwr.ite.server.model.entity.User;
 import pl.pwr.ite.server.web.dto.UserDto;
 import pl.pwr.ite.server.web.mapper.UserMapper;
-import pl.pwr.ite.service.UserService;
+import pl.pwr.ite.server.service.UserService;
 
 @Component
 public class UserFacade extends EntityServiceFacade<User, UserDto, UserService, UserMapper> {

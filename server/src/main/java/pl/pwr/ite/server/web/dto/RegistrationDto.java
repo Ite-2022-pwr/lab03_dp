@@ -1,7 +1,7 @@
 package pl.pwr.ite.server.web.dto;
 
 import lombok.Data;
-import pl.pwr.ite.model.enums.RegistrationStatus;
+import pl.pwr.ite.server.model.enums.RegistrationStatus;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

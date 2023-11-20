@@ -1,8 +1,8 @@
 package pl.pwr.ite.server.web.service;
 
-import pl.pwr.ite.model.entity.EntityBase;
+import pl.pwr.ite.server.model.entity.EntityBase;
 import pl.pwr.ite.server.web.mapper.MapperBase;
-import pl.pwr.ite.service.EntityService;
+import pl.pwr.ite.server.service.EntityService;
 
 import java.util.Collection;
 import java.util.UUID;

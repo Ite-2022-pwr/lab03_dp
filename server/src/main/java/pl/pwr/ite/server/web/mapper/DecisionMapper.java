@@ -2,7 +2,7 @@ package pl.pwr.ite.server.web.mapper;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import pl.pwr.ite.model.entity.Decision;
+import pl.pwr.ite.server.model.entity.Decision;
 import pl.pwr.ite.server.web.dto.DecisionDto;
 
 @Component

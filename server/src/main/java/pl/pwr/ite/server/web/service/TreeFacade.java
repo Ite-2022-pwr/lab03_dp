@@ -1,14 +1,11 @@
 package pl.pwr.ite.server.web.service;
 
 import org.springframework.stereotype.Component;
-import pl.pwr.ite.model.entity.Tree;
+import pl.pwr.ite.server.model.entity.Tree;
 import pl.pwr.ite.server.web.dto.TreeDto;
 import pl.pwr.ite.server.web.mapper.TreeMapper;
-import pl.pwr.ite.service.RegistrationService;
-import pl.pwr.ite.service.TreeService;
-
-import java.util.Collection;
-import java.util.UUID;
+import pl.pwr.ite.server.service.RegistrationService;
+import pl.pwr.ite.server.service.TreeService;
 
 @Component
 public class TreeFacade extends EntityServiceFacade<Tree, TreeDto, TreeService, TreeMapper> {

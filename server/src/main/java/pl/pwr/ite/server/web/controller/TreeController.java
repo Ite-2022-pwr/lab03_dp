@@ -3,7 +3,7 @@ package pl.pwr.ite.server.web.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.pwr.ite.model.filter.TreeFilter;
+import pl.pwr.ite.server.model.filter.TreeFilter;
 import pl.pwr.ite.server.web.dto.TreeDto;
 import pl.pwr.ite.server.web.service.TreeFacade;
 

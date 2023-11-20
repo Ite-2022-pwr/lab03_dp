@@ -1,12 +1,12 @@
 package pl.pwr.ite.server.web.service;
 
 import org.springframework.stereotype.Component;
-import pl.pwr.ite.model.entity.Report;
+import pl.pwr.ite.server.model.entity.Report;
 import pl.pwr.ite.server.web.dto.ReportDto;
 import pl.pwr.ite.server.web.mapper.ReportMapper;
-import pl.pwr.ite.service.RegistrationService;
-import pl.pwr.ite.service.ReportService;
-import pl.pwr.ite.service.UserService;
+import pl.pwr.ite.server.service.RegistrationService;
+import pl.pwr.ite.server.service.ReportService;
+import pl.pwr.ite.server.service.UserService;
 
 @Component
 public class ReportFacade extends EntityServiceFacade<Report, ReportDto, ReportService, ReportMapper> {

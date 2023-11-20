@@ -1,7 +1,7 @@
 package pl.pwr.ite.server.web.mapper;
 
 import org.springframework.stereotype.Component;
-import pl.pwr.ite.model.entity.User;
+import pl.pwr.ite.server.model.entity.User;
 import pl.pwr.ite.server.web.dto.UserDto;
 
 @Component

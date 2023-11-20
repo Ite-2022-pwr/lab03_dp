@@ -1,13 +1,12 @@
 package pl.pwr.ite.server.web.service;
 
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-import pl.pwr.ite.model.entity.Registration;
-import pl.pwr.ite.model.enums.RegistrationStatus;
+import pl.pwr.ite.server.model.entity.Registration;
+import pl.pwr.ite.server.model.enums.RegistrationStatus;
 import pl.pwr.ite.server.web.dto.RegistrationDto;
 import pl.pwr.ite.server.web.mapper.RegistrationMapper;
-import pl.pwr.ite.service.RegistrationService;
-import pl.pwr.ite.service.UserService;
+import pl.pwr.ite.server.service.RegistrationService;
+import pl.pwr.ite.server.service.UserService;
 
 import java.time.LocalDateTime;
 

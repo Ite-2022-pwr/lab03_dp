@@ -3,7 +3,7 @@ package pl.pwr.ite.server.web.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.pwr.ite.model.filter.DecisionFilter;
+import pl.pwr.ite.server.model.filter.DecisionFilter;
 import pl.pwr.ite.server.web.dto.DecisionDto;
 import pl.pwr.ite.server.web.service.DecisionFacade;
 
